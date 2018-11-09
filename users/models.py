@@ -11,6 +11,7 @@ class Profile(models.Model):
         ('O', 'other')
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_('User'))
+    pubg_id = models.IntegerField(unique=True, blank=True, null=True, verbose_name=_('Pubg ID'))
     name = models.CharField(max_length=25, verbose_name=_('Name'))
     age = models.PositiveIntegerField(verbose_name=_('Age'))
     gender = models.CharField(choices=gender_choice, max_length=1, verbose_name=_('Gender'))

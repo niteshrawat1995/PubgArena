@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'blog',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Setting media files locations (filesytem+browser)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Telling crispy_forms which cssbootstrap to use.
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Redirecting to homepage when logged in.
+LOGIN_REDIRECT_URL = 'blog-home'
+
+# Redirecting the login url to urlpattern name 'login' route.
+LOGIN_URL = 'login'
