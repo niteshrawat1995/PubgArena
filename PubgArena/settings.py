@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'blog',
     'crispy_forms',
+    'mapsNguns',
 ]
 
 MIDDLEWARE = [

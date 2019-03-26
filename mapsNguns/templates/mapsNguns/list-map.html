@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <table>
+        <th>MAP NAME</th>
+        <th>MAP IMAGES</th>
+        <th>GENRE</th>
+        <th>SHORT DESC</th>
+        <th>LONG DESC</th>
+        <th>CITIES</th>
+        {% for obj in object_list %}
+            <tr>
+                <td><h1>{{ obj.name }}</h1></td>
+
+                <td>{% for img in obj.mapimage_set.all %}
+                    <img class="rounded-circle account-img" src="{{ img.image.url }}">
+                {% endfor %}</td>
+
+                <td>{{ obj.genre }}</td>
+                <td>{{ obj.short_desc }}</td>
+                <td>{{ obj.long_desc }}</td>
+                <td><a href="{% url 'list-map-city' obj.id %}">{{ obj.city_count }}</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock content %}

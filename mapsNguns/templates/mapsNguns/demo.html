@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX demo</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body id=”theBody”>
+
+<div id="main"><h3>JQuery Event Handlers</h3></div>
+
+<div>
+
+    <img src=’http://www.newthinktank.com/favicon.png’ id=’logo’ alt=’Little Brain’/>
+
+</div>
+
+<br/>
+
+<div>
+
+    <p><strong>Events Triggered on the Page:</strong></p>
+
+    <p id=”second”>Waiting for Event</p>
+
+    <p id=”third”>Waiting for Change</p>
+
+</div>
+
+
+<div>
+
+    <p><strong>Key Events Triggered on the Page:</strong></p>
+
+    <span id=”fourth”>Key Pressed:</span>
+
+    <span id=”fifth”>Waiting for Change</span>
+
+</div>
+<br/>
+
+
+<div>
+
+    <p><strong>Mouse Movements on the Page:</strong></p>
+
+    <span id=”sixth”>Mouse X Coordinate:</span>
+
+    <span id=”seventh”>Waiting for Change</span><br/>
+
+    <span id=”eighth”>Mouse Y Coordinate:</span>
+
+    <span id=”ninth”>Waiting for Change</span><br/>
+
+    <span>Textbox Changed: </span>
+
+    <span id=”tenth”>Waiting for Event</span><br/>
+
+    <span>Element Changed When: </span>
+
+    <span id=”eleventh”>Event Occurred When</span>
+
+</div>
+<br/>
+
+<form>
+
+    <button type=”button” id=”oneButton”>Alert on Click</button>
+
+    <button type=”button” id=”twoButton”>Click on me Twice</button>
+
+    <button type=”button” id=”threeButton”>Unbind the Logo</button>
+
+    <input type=’text’ id=”textBox1″ size=40>
+
+    <input type=’submit’ value=’Send’>
+
+</form>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#oneButton").on("click", function () {
+            console.log("i am here!");
+            alert("Alert button is clicked");
+        })
+
+        $("#tenth").css("color", "red");
+
+    });
+
+    function alertButtonClick() {
+        alert("Alert button is clicked.");
+    }
+
+</script>
+
+</body>
+</html>

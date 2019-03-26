@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h2 class="article-title">{{ weapon.name }}</h2>
+    <br>
+    <article class="media content-section">
+
+        {% for img in weapon.weaponimage_set.all %}
+            <img src="{{ img.image.url }}">
+        {% endfor %}
+
+        <h5>Weapon type: </h5><br>{{ weapon.type }}
+        <br>
+        <h5>Weapon Bullet: </h5>{{ weapon.bullet }}
+        <br>
+        <h5>Weapon Slots: </h5>{{ weapon.slots }}
+        <br>
+        <h5>Weapon Modes: </h5>{{ weapon.modes }}
+        <br>
+        <h5>Weapon Damage /5: </h5>{{ weapon.damage }}
+        <br>
+        {{ weapon.desc }}
+{% endblock content %}

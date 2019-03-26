@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+
+    <article class="media content-section">
+        <div class="media-body">
+            {% for obj in object_list %}
+                {% for img in obj.weaponimage_set.all %}
+                    <img class="rounded-circle article-img" src="{{ img.image.url }}">
+                {% endfor %}
+                <a href="{% url 'detail-weapon' obj.id %}">{{ obj.name }}</a>
+                <p class="article-content">{{ obj.desc }}</p>
+            {% endfor %}
+        </div>
+    </article>
+
+{% endblock content %}
