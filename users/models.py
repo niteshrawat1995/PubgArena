@@ -20,14 +20,14 @@ class Profile(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        super(Profile, self).save()
-        image = Image.open(self.image.path)
-        if image.height > 300 and image.width > 300:
-            output_size = (300, 300)
-            image.thumbnail(output_size)
-            image.save(self.image.path)
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     super(Profile, self).save()
+    #     image = Image.open(self.image.path)
+    #     if image.height > 300 and image.width > 300:
+    #         output_size = (300, 300)
+    #         image.thumbnail(output_size)
+    #         image.save(self.image.path)
 
     class Meta:
         verbose_name = _('Pubg Profile')
